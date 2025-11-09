@@ -1,0 +1,7 @@
+baseURL = 'https://prizrak.me/'
+languageCode = 'en-us'
+title = 'prizrak.me blog'
+[params]
+  subtitle = 'Random dev blog thoughts'
+  [params.contact]
+    email = 'utilityemal77@gmail.com'

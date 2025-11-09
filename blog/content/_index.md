@@ -1,0 +1,3 @@
+# prizrak.me
+
+Random thoughts

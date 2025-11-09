@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    @apply bg-gray-900 text-gray-100;
+  }
+  a {
+    @apply text-indigo-400 hover:text-indigo-300 transition;
+  }
+}
+

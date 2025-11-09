@@ -17,8 +17,8 @@
 
           buildInputs = [
             pkgs.hugo
-            pkgs.nodejs_20
-            pkgs.npm
+            pkgs.nodejs_24
+	    pkgs.caddy
           ];
 
           shellHook = ''

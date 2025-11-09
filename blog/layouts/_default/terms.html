@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1 class="text-3xl font-bold mb-6">{{ .Title }}</h1>
+<ul class="space-y-2">
+  {{ range .Data.Terms.Alphabetical }}
+    <li><a class="text-indigo-400 hover:text-indigo-300" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}
+
