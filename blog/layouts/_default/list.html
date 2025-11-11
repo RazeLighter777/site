@@ -1,17 +1,17 @@
 {{ define "main" }}
 <main class="w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
-<h1 class="text-4xl font-bold mb-8 text-center">{{ .Title }}</h1>
+<h1 class="text-5xl font-bold mb-10 text-center">{{ .Title }}</h1>
 <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {{ range .Pages }}
-    <article class="bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <a href="{{ .RelPermalink }}" class="block p-6">
-        <h2 class="text-2xl font-semibold mb-2 hover:text-blue-400 transition-colors duration-200">
+    <article class="card-interactive hover:scale-105 transition-transform duration-300">
+      <a href="{{ .RelPermalink }}" class="block no-underline">
+        <h2 class="text-2xl font-semibold mb-3 text-[#e0e0e0] hover:text-[#00ff9f] transition-colors duration-200">
           {{ .Title }}
         </h2>
         {{ if .Params.description }}
-        <p class="text-gray-400 mb-4">{{ .Params.description }}</p>
+        <p class="text-[#999999] mb-4">{{ .Params.description }}</p>
         {{ end }}
-        <p class="text-sm text-gray-500">{{ .Date.Format "Jan 2, 2006" }}</p>
+        <p class="text-sm text-[#666666]">{{ .Date.Format "Jan 2, 2006" }}</p>
       </a>
     </article>
     {{ end }}

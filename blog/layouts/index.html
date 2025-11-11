@@ -1,18 +1,20 @@
 {{ define "main" }}
   <section class="space-y-8">
-    <h1 class="text-3xl font-bold mb-6 w-full 4xl">Latest Posts</h1>
+    <h1 class="text-5xl font-bold mb-8">Latest Posts</h1>
     {{ range first 10 (where .Site.RegularPages "Type" "post") }}
-      <article class="border-b border-gray-800 w-full pb-6 mb-6">
-        <h2 class="text-2xl font-semibold w-full">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <article class="card-interactive mb-8">
+        <h2 class="text-3xl font-semibold mb-3">
+          <a href="{{ .RelPermalink }}" class="hover:text-[#00ff9f]">{{ .Title }}</a>
         </h2>
-        <p class="text-gray-400 text-sm mb-4">
+        <p class="text-[#999999] text-sm mb-4">
           {{ .Date.Format "Jan 2, 2006" }}
         </p>
-        <p class="text-gray-300">{{ .Summary }}</p>
+        {{ if .Params.description }}
+        <p class="text-[#cccccc]">{{ .Params.description }}</p>
+        {{ end }}
       </article>
     {{ else }}
-      <p class="text-gray-500">No posts yet.</p>
+      <p class="text-[#999999]">No posts yet.</p>
     {{ end }}
   </section>
 {{ end }}

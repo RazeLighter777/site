@@ -1,7 +1,11 @@
 {{ define "main" }}
-  <article class="prose prose-invert max-w-none">
-    <h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
-    <p class="text-gray-500 text-sm mb-8">{{ .Date.Format "Jan 2, 2006" }}</p>
-    {{ .Content }}
-  </article>
+  <div class="flex justify-center px-4 sm:px-6 lg:px-8">
+    <article class="w-full max-w-4xl card">
+      <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+      <p class="text-[#999999] text-sm mb-8">{{ .Date.Format "Jan 2, 2006" }}</p>
+      <div class="text-[#cccccc] leading-relaxed space-y-6">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
 {{ end }}

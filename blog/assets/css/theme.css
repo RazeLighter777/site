@@ -2,10 +2,114 @@
 
 @layer base {
   html {
-    @apply bg-gray-900 text-gray-100;
+    @apply bg-[#0a0a0a] text-[#e0e0e0];
+    font-family: 'Georgia', 'Garamond', serif;
   }
+  
+  body {
+    @apply leading-relaxed;
+  }
+  
   a {
-    @apply text-indigo-400 hover:text-indigo-300 transition;
+    @apply text-[#00ff9f] hover:text-[#ff006e] transition-all duration-300;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(0, 255, 159, 0.637);
+  }
+  
+  a:hover {
+    text-decoration-color: rgba(255, 0, 255, 0.8);
+    transform: translateY(-1px);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    font-family: 'Georgia', 'Garamond', serif;
+    color: #00ffff;
+  }
+  
+  h1 {
+    @apply text-5xl;
+    border-bottom: 3px solid #ff00ff;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  h2 {
+    @apply text-3xl;
+  }
+
+  article h1, article h2, article h3, article h4, article h5, article h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  article h1:first-child, article h2:first-child, article h3:first-child {
+    margin-top: 0;
+  }
+
+  article p {
+    margin-bottom: 1.5rem;
+  }
+
+  article ul, article ol {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  article ul {
+    list-style: disc;
+    list-style-position: outside;
+  }
+
+  article ol {
+    list-style: decimal;
+    list-style-position: outside;
+  }
+
+  article pre {
+    margin-bottom: 1.5rem;
   }
 }
 
+@layer components {
+  .rss-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .rss-link svg {
+    display: inline-block;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-full bg-[#1a1a2e] text-[#00ff9f] hover:bg-[#2a2a3e] transition-all duration-300;
+    box-shadow: 0 4px 12px rgba(0, 255, 159, 0.3);
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 0, 255, 0.4);
+  }
+  
+  .card {
+    @apply bg-[#1a1a1a] rounded-2xl p-6 border-2 border-[#333333] transition-all duration-300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-interactive {
+    @apply bg-[#1a1a1a] rounded-2xl p-6 border-2 border-[#333333] hover:border-[#ff00ff] transition-all duration-300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-interactive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 0, 255, 0.4);
+  }
+  
+  input:focus, textarea:focus {
+    @apply outline-none ring-2 ring-[#00ffff];
+  }
+}
