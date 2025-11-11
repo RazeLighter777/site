@@ -1,0 +1,151 @@
+{{ define "main" }}
+<div class="space-y-12">
+  <div class="text-center space-y-4">
+    <h1 class="text-6xl font-bold mb-4 inline-block">Projects</h1>
+    <p class="text-xl text-[#999999] max-w-3xl mx-auto">
+      A collection of my open source work spanning systems programming, security, infrastructure, and web development.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+    <!-- Carve -->
+    <div class="card-interactive group relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#ff00ff]/20 to-transparent rounded-bl-full"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl font-bold text-[#00ffff] group-hover:text-[#ff00ff] transition-colors mb-3">
+          Carve
+        </h2>
+        <div class="flex gap-2 items-center mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-[#ff6b35]/20 text-[#ff6b35] rounded-full border border-[#ff6b35]/40">
+            Rust
+          </span>
+          <span class="text-[#666666]">•</span>
+          <span class="px-3 py-1 text-xs font-semibold bg-[#3178c6]/20 text-[#3178c6] rounded-full border border-[#3178c6]/40">
+            TypeScript
+          </span>
+        </div>
+        <p class="text-[#cccccc] mb-6 leading-relaxed">
+          A custom red-blue CTF platform built for competitive cybersecurity competitions. Features real-time scoring, dynamic infrastructure provisioning, and team management capabilities.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/RazeLighter777/carve" target="_blank" rel="noopener" 
+             class="inline-flex items-center gap-2 px-5 py-2 bg-[#1a1a2e] hover:bg-[#2a2a3e] rounded-lg border border-[#00ff9f]/30 hover:border-[#ff00ff]/60 transition-all group-hover:shadow-[0_0_20px_rgba(255,0,255,0.3)]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PinPAM -->
+    <div class="card-interactive group relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#00ffff]/20 to-transparent rounded-bl-full"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl font-bold text-[#00ffff] group-hover:text-[#ff00ff] transition-colors mb-3">
+          PinPAM
+        </h2>
+        <div class="flex gap-2 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-[#ff6b35]/20 text-[#ff6b35] rounded-full border border-[#ff6b35]/40">
+            Rust
+          </span>
+        </div>
+        <p class="text-[#cccccc] mb-6 leading-relaxed">
+          A TPM2-backed PIN PAM module for Linux systems. Provides hardware-secured authentication using the Trusted Platform Module, enhancing system security with cryptographic PIN verification.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/RazeLighter777/pinpam" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-2 bg-[#1a1a2e] hover:bg-[#2a2a3e] rounded-lg border border-[#00ff9f]/30 hover:border-[#ff00ff]/60 transition-all group-hover:shadow-[0_0_20px_rgba(255,0,255,0.3)]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- linux-landlock-no-inherit -->
+    <div class="card-interactive group relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#00ff9f]/20 to-transparent rounded-bl-full"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl font-bold text-[#00ffff] group-hover:text-[#ff00ff] transition-colors mb-3">
+          linux-landlock-no-inherit
+        </h2>
+        <div class="flex gap-2 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-[#555555]/20 text-[#a8b9cc] rounded-full border border-[#555555]/40">
+            C
+          </span>
+        </div>
+        <p class="text-[#cccccc] mb-6 leading-relaxed">
+          A Linux kernel extension that enhances the Landlock security module. Adds functionality to prevent security policy inheritance, giving finer-grained control over sandboxing behavior.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/RazeLighter777/linux-landlock-no-inherit" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-2 bg-[#1a1a2e] hover:bg-[#2a2a3e] rounded-lg border border-[#00ff9f]/30 hover:border-[#ff00ff]/60 transition-all group-hover:shadow-[0_0_20px_rgba(255,0,255,0.3)]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Site -->
+    <div class="card-interactive group relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#ff00ff]/20 to-transparent rounded-bl-full"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl font-bold text-[#00ffff] group-hover:text-[#ff00ff] transition-colors mb-3">
+          Site
+        </h2>
+        <div class="flex gap-2 items-center mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-[#ff4088]/20 text-[#ff4088] rounded-full border border-[#ff4088]/40">
+            Hugo
+          </span>
+          <span class="text-[#666666]">•</span>
+          <span class="px-3 py-1 text-xs font-semibold bg-[#06b6d4]/20 text-[#06b6d4] rounded-full border border-[#06b6d4]/40">
+            TailwindCSS
+          </span>
+        </div>
+        <p class="text-[#cccccc] mb-6 leading-relaxed">
+          This personal blog and portfolio site. Built with Hugo and styled with TailwindCSS, featuring a custom cyberpunk-inspired theme with neon accents and dark aesthetics.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/RazeLighter777/site" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-2 bg-[#1a1a2e] hover:bg-[#2a2a3e] rounded-lg border border-[#00ff9f]/30 hover:border-[#ff00ff]/60 transition-all group-hover:shadow-[0_0_20px_rgba(255,0,255,0.3)]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- IaaS -->
+    <div class="card-interactive group relative overflow-hidden md:col-span-2">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#00ffff]/20 to-transparent rounded-bl-full"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl font-bold text-[#00ffff] group-hover:text-[#ff00ff] transition-colors mb-3">
+          IaaS
+        </h2>
+        <div class="flex gap-2 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-[#326ce5]/20 text-[#326ce5] rounded-full border border-[#326ce5]/40">
+            Kubernetes
+          </span>
+        </div>
+        <p class="text-[#cccccc] mb-6 leading-relaxed max-w-4xl">
+          Infrastructure as Code for my homelab environment. A comprehensive collection of Kubernetes manifests managing containerized workloads, services, and infrastructure automation for my personal cloud infrastructure.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/RazeLighter777/iaas" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-2 bg-[#1a1a2e] hover:bg-[#2a2a3e] rounded-lg border border-[#00ff9f]/30 hover:border-[#ff00ff]/60 transition-all group-hover:shadow-[0_0_20px_rgba(255,0,255,0.3)]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-16 text-center">
+    <p class="text-[#999999] text-lg">
+      More projects on <a href="https://github.com/RazeLighter777" target="_blank" rel="noopener" class="text-[#00ff9f] hover:text-[#ff00ff]">GitHub</a>
+    </p>
+  </div>
+</div>
+{{ end }}

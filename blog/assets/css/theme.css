@@ -84,6 +84,10 @@
     display: inline-block;
   }
 
+  .language-tag {
+    text-decoration: none !important;
+  }
+
   .btn {
     @apply px-6 py-3 rounded-full bg-[#1a1a2e] text-[#00ff9f] hover:bg-[#2a2a3e] transition-all duration-300;
     box-shadow: 0 4px 12px rgba(0, 255, 159, 0.3);
