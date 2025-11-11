@@ -36,4 +36,4 @@ My languages of choice:
 
 Languages I dislike:
 - Python: Death to dynamic typing. pip is an abomination. It's 2025 why am I still having to install python2 
-- javascript: I wish java applets succeeded over this. It's so cursed in so many ways. I avoid writing it if I can use typescript. 
+- javascript: I wish java applets succeeded over this. I avoid writing it if I can use typescript. 
