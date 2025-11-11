@@ -29,7 +29,8 @@ site:		## hugo compile build
 css:		## compile Tailwind CSS
 	@npx @tailwindcss/cli \
 		-i ./assets/css/input.css  \
-		-o ./assets/css/output.css
+		-o ./assets/css/output.css \
+		--minify
 
 run-css:	## run & watch Tailwind CSS compiler
 	@npx @tailwindcss/cli \
