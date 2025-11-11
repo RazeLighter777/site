@@ -1,9 +1,9 @@
 +++
 date = '2025-11-09T12:48:20-05:00'
 draft = false
-title = 'Devops-ifying my blog with hugo on k8s'
+title = 'Devops-ifying my blog'
 type = 'post'
-description = 'How I deployed hugo on k8s with tailwind, fluxcd, and git-sync'
+description = 'How I deployed hugo on k8s with k8s,tailwind, fluxcd, and git-sync'
 +++
 
 # Hugo on Kubernetes
@@ -16,7 +16,9 @@ I wanted to make a self-hosted blog so I could post projects and write about stu
 
 Because I already run a kubernetes cluster for my homelab, I decided to deploy hugo on k8s. This way I could use my existing infrastructure and take advantage of features like automatic TLS with cert-manager, ingress routing, and gitops with fluxcd.
 
-And no hosting fees!
+And no hosting fees! Just the eletric bill, but we won't talk about that.
+
+Is it overkill? Definitely. Does anyone need kubernetes at home? Should you be using it? No and definitely not. But I run about 100 services in my homelab and I like having a consistent way to manage them all.
 
 # Messing around
 
@@ -261,6 +263,8 @@ persistence:
 ```
 
 And that's it! With this setup, I have a self-hosted hugo blog running on kubernetes, with automatic updates from git, and styled with tailwindcss. Whenever I push changes to my repo, the site automatically rebuilds and updates in my cluster, within 60 seconds.
+
+I even enabled minification of the CSS in my postcss config to reduce the size of the static files served. It even just eeks me under the 14kb optimal page load size according to [endtimes.dev](https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/).
 
 You can check out the full helm release [here](https://raw.githubusercontent.com/RazeLighter777/iaas/refs/heads/main/cluster/apps/blog/app/blog-helmrelease.yaml) if you're interested.
 
