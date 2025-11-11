@@ -262,3 +262,11 @@ persistence:
 
 And that's it! With this setup, I have a self-hosted hugo blog running on kubernetes, with automatic updates from git, and styled with tailwindcss. Whenever I push changes to my repo, the site automatically rebuilds and updates in my cluster, within 60 seconds.
 
+You can check out the full helm release [here](https://raw.githubusercontent.com/RazeLighter777/iaas/refs/heads/main/cluster/apps/blog/app/blog-helmrelease.yaml) if you're interested.
+
+# TL;DR
+
+- Use git-sync to sync your hugo site source code from git
+- Use a hugo container to build the site on changes
+- Use nginx to serve the built static files
+- Profit!
