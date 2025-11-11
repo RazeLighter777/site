@@ -72,7 +72,7 @@ After getting the site looking how I wanted, I committed the code and moved to m
 
 What is fluxcd? From their [website](https://fluxcd.io/): Flux is a set of continuous and progressive delivery solutions for Kubernetes that are open and extensible.
 
-Basically it allows you dto declaratively manage your kubernetes resources with git. You push changes to your manifests in git, and fluxcd syncs those changes to your cluster.
+Basically it allows you to declaratively manage your kubernetes resources with git. You push changes to your manifests in git, and fluxcd syncs those changes to your cluster.
 
 The two main building blocks are Kustomizations and HelmReleases. Kustomizations allow you to manage plain kubernetes manifests, while HelmReleases allow you to manage helm charts. 
 
