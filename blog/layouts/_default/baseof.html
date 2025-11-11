@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-  {{ $css := resources.Get "css/theme.css" | css.PostCSS | resources.Minify | resources.Fingerprint }}
+  {{ $css := resources.Get "css/output.css" | css.PostCSS | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 </head>
 <body class="flex flex-col min-h-screen font-sans">
