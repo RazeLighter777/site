@@ -43,7 +43,7 @@ I first created a flake.nix on my local machine to build the site with hugo and 
           buildInputs = [
             pkgs.hugo
             pkgs.nodejs_24
-	    pkgs.caddy
+	          pkgs.caddy
           ];
 
           shellHook = ''
