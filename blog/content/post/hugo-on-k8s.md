@@ -238,26 +238,26 @@ The only volumes I needed were the git-sync volume and an output volume for the 
 ```yaml
 persistence:
     blog-source:
-    enabled: true
-    type: emptyDir
-    advancedMounts:
-        main:
-        main:
-            - path: /git
-        git-sync-init:
-            - path: /git
-        git-sync:
-            - path: /git
+      enabled: true
+      type: emptyDir
+      advancedMounts:
+          main:
+          main:
+              - path: /git
+          git-sync-init:
+              - path: /git
+          git-sync:
+              - path: /git
     blog-output:
-    enabled: true
-    type: emptyDir
-    advancedMounts:
-        main:
-        main:
-            - path: /output
-        nginx:
-            - path: /usr/share/nginx/html
-              readOnly: true
+      enabled: true
+      type: emptyDir
+      advancedMounts:
+          main:
+          main:
+              - path: /output
+          nginx:
+              - path: /usr/share/nginx/html
+                readOnly: true
 ```
 
 And that's it! With this setup, I have a self-hosted hugo blog running on kubernetes, with automatic updates from git, and styled with tailwindcss. Whenever I push changes to my repo, the site automatically rebuilds and updates in my cluster, within 60 seconds.
