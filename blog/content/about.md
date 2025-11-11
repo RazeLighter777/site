@@ -27,6 +27,7 @@ Software I love:
 - QEMU/KVM
 - landlock lsm
 - k9s
+- fluxcd
 
 My languages of choice:
 - Rust: It is powerful and has an easy to use package system. Say what you will about the borrow checker, but seems like programs I write in it don't have as many bugs. Generally my first choice for systems programming.
