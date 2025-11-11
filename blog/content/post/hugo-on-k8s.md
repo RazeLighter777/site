@@ -132,9 +132,9 @@ controllers:
             reloader.stakater.com/auto: "true"
         pod:
             securityContext:
-            fsGroup: 65533
-            runAsUser: 65533
-            runAsGroup: 65533
+              fsGroup: 65533
+              runAsUser: 65533
+              runAsGroup: 65533
         initContainers:
             git-sync-init:
             image:
