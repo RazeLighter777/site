@@ -74,7 +74,7 @@ What is fluxcd? From their [website](https://fluxcd.io/): Flux is a set of conti
 
 Basically it allows you to declaratively manage your kubernetes resources with git. You push changes to your manifests in git, and fluxcd syncs those changes to your cluster.
 
-The two main building blocks are Kustomizations and HelmReleases. Kustomizations allow you to manage plain kubernetes manifests, while HelmReleases allow you to manage helm charts. 
+The two main building blocks are Kustomizations and HelmReleases. Kustomizations allow you to manage plain kubernetes manifests, while HelmReleases allow you to manage helm charts.
 
 I already had fluxcd set up in my cluster to manage my other workloads, so I just needed to add a new Kustomization for my hugo site.
 
@@ -126,28 +126,28 @@ I did both. The init container runs once at startup to clone the repo, and the s
 
 ```yaml
 controllers:
-    main:
-        type: deployment
-        annotations:
-            reloader.stakater.com/auto: "true"
-        pod:
-            securityContext:
-              fsGroup: 65533
-              runAsUser: 65533
-              runAsGroup: 65533
-        initContainers:
-            git-sync-init:
-            image:
-                repository: registry.k8s.io/git-sync/git-sync
-                tag: v4.3.0
-            securityContext:
-                runAsUser: 65533
-                runAsGroup: 65533
-            env:
-                GITSYNC_REPO: https://github.com/razelighter777/site.git
-                GITSYNC_ROOT: /git
-                GITSYNC_LINK: current
-                GITSYNC_ONE_TIME: "true"
+  main:
+    type: deployment
+    annotations:
+      reloader.stakater.com/auto: "true"
+    pod:
+      securityContext:
+        fsGroup: 65533
+        runAsUser: 65533
+        runAsGroup: 65533
+    initContainers:
+      git-sync-init:
+      image:
+        repository: registry.k8s.io/git-sync/git-sync
+        tag: v4.3.0
+      securityContext:
+        runAsUser: 65533
+        runAsGroup: 65533
+      env:
+        GITSYNC_REPO: https://github.com/razelighter777/site.git
+        GITSYNC_ROOT: /git
+        GITSYNC_LINK: current
+        GITSYNC_ONE_TIME: "true"
 ```
 
 Simple enough, right?
@@ -167,32 +167,32 @@ containers:
             - -c
             - |
             LAST_HASH=""
-            
+
             while true; do
                 # Get current git hash from outside the blog directory
                 CURRENT_HASH=$(readlink /git/current 2>/dev/null || echo "unknown")
-                
+
                 # If git sync updated, rebuild everything
                 if [ "$CURRENT_HASH" != "$LAST_HASH" ]; then
                 echo "Detected git update (hash: $CURRENT_HASH), rebuilding site..."
-                
+
                 cd /git/current/blog || { echo "Failed to cd, retrying..."; sleep 5; continue; }
-                
+
                 # Install npm dependencies
                 npm install || { echo "npm install failed, retrying..."; sleep 5; continue; }
-                
+
                 # Compile Tailwind CSS
                 echo "Compiling Tailwind CSS..."
                 npx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/output.css || { echo "CSS compilation failed, retrying..."; sleep 5; continue; }
-                
+
                 # Build Hugo to output directory
                 echo "Building Hugo site..."
                 hugo --destination /output --baseURL https://blog.${domain_name} --cacheDir /tmp/hugo_cache || { echo "Hugo build failed, retrying..."; sleep 5; continue; }
-                
+
                 LAST_HASH="$CURRENT_HASH"
                 echo "Site built successfully"
                 fi
-                
+
                 sleep 10
             done
         env:
@@ -222,15 +222,15 @@ I added a simple nginx container to serve the built static files.
 
 ```yaml
 nginx:
-    image:
-        repository: docker.io/nginxinc/nginx-unprivileged
-        tag: 1.27-alpine
-    resources:
-        requests:
-            cpu: 50m
-            memory: 32Mi
-        limits:
-            memory: 128Mi
+  image:
+    repository: docker.io/nginxinc/nginx-unprivileged
+    tag: 1.27-alpine
+  resources:
+    requests:
+      cpu: 50m
+      memory: 32Mi
+    limits:
+      memory: 128Mi
 ```
 
 The only volumes I needed were the git-sync volume and an output volume for the built site.
@@ -253,8 +253,8 @@ persistence:
       type: emptyDir
       advancedMounts:
           main:
-          main:
-              - path: /output
+            main:
+                - path: /output
           nginx:
               - path: /usr/share/nginx/html
                 readOnly: true
