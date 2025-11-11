@@ -118,6 +118,8 @@ I use bjw-s/app-template for a lot of my k8s apps. It's kind of a weird concept,
 
 So you can avoid pulling in sketchy usually unmaintained helm charts from who knows where on the internet. Plus a lot of apps are just released as docker images anyway, so why not just use those directly?
 
+You can check it out [here](https://github.com/bjw-s-labs/helm-charts).
+
 My solution ended up involving a single pod with three containers: git-sync, hugomods/hugo, and nginx-unprivileged.
 
 # Git-sync
@@ -210,7 +212,7 @@ containers:
 
 ```
 
-A little hacky, but it works. Notice I disabled the hot reload feature since I'm handling it manually with the loop.
+A little hacky, but it works.
 
 It does have to reinstall the node modules on every change, which is a bit slow, but for now it's acceptable since I have like 4 dependencies.
 
