@@ -70,6 +70,16 @@
 
   article pre {
     margin-bottom: 1.5rem;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  article code {
+    white-space: pre;
+  }
+
+  article pre code {
+    display: block;
   }
 }
 

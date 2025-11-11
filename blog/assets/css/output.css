@@ -265,9 +265,6 @@
   .grid {
     display: grid;
   }
-  .inline-block {
-    display: inline-block;
-  }
   .inline-flex {
     display: inline-flex;
   }
@@ -285,6 +282,9 @@
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
+  }
+  .w-\[95\%\] {
+    width: 95%;
   }
   .w-full {
     width: 100%;
@@ -387,50 +387,14 @@
   .border-\[\#00ff9f\]\/30 {
     border-color: color-mix(in oklab, #00ff9f 30%, transparent);
   }
-  .border-\[\#06b6d4\]\/40 {
-    border-color: color-mix(in oklab, #06b6d4 40%, transparent);
-  }
-  .border-\[\#326ce5\]\/40 {
-    border-color: color-mix(in oklab, #326ce5 40%, transparent);
-  }
-  .border-\[\#3178c6\]\/40 {
-    border-color: color-mix(in oklab, #3178c6 40%, transparent);
-  }
-  .border-\[\#555555\]\/40 {
-    border-color: color-mix(in oklab, #555555 40%, transparent);
-  }
   .border-\[\#ff00ff\] {
     border-color: #ff00ff;
-  }
-  .border-\[\#ff6b35\]\/40 {
-    border-color: color-mix(in oklab, #ff6b35 40%, transparent);
-  }
-  .border-\[\#ff4088\]\/40 {
-    border-color: color-mix(in oklab, #ff4088 40%, transparent);
   }
   .bg-\[\#1a1a1a\] {
     background-color: #1a1a1a;
   }
   .bg-\[\#1a1a2e\] {
     background-color: #1a1a2e;
-  }
-  .bg-\[\#06b6d4\]\/20 {
-    background-color: color-mix(in oklab, #06b6d4 20%, transparent);
-  }
-  .bg-\[\#326ce5\]\/20 {
-    background-color: color-mix(in oklab, #326ce5 20%, transparent);
-  }
-  .bg-\[\#3178c6\]\/20 {
-    background-color: color-mix(in oklab, #3178c6 20%, transparent);
-  }
-  .bg-\[\#555555\]\/20 {
-    background-color: color-mix(in oklab, #555555 20%, transparent);
-  }
-  .bg-\[\#ff6b35\]\/20 {
-    background-color: color-mix(in oklab, #ff6b35 20%, transparent);
-  }
-  .bg-\[\#ff4088\]\/20 {
-    background-color: color-mix(in oklab, #ff4088 20%, transparent);
   }
   .bg-gradient-to-br {
     --tw-gradient-position: to bottom right in oklab;
@@ -543,35 +507,17 @@
   .text-\[\#00ffff\] {
     color: #00ffff;
   }
-  .text-\[\#06b6d4\] {
-    color: #06b6d4;
-  }
-  .text-\[\#326ce5\] {
-    color: #326ce5;
-  }
-  .text-\[\#3178c6\] {
-    color: #3178c6;
-  }
   .text-\[\#666666\] {
     color: #666666;
   }
   .text-\[\#999999\] {
     color: #999999;
   }
-  .text-\[\#a8b9cc\] {
-    color: #a8b9cc;
-  }
   .text-\[\#cccccc\] {
     color: #cccccc;
   }
   .text-\[\#e0e0e0\] {
     color: #e0e0e0;
-  }
-  .text-\[\#ff6b35\] {
-    color: #ff6b35;
-  }
-  .text-\[\#ff4088\] {
-    color: #ff4088;
   }
   .text-indigo-400 {
     color: var(--color-indigo-400);
@@ -921,6 +867,14 @@
   }
   article pre {
     margin-bottom: 1.5rem;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  article code {
+    white-space: pre;
+  }
+  article pre code {
+    display: block;
   }
 }
 @layer components {
