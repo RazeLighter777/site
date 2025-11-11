@@ -3,7 +3,7 @@ date = '2025-11-09T12:48:20-05:00'
 draft = false
 title = 'My First Post'
 type = 'post'
-description = 'pinpam is a PAM module and credential utility to enable system-wide authentication with a secure TPM2-backed pin.'
+description = 'My module and credential utility to enable system-wide authentication with a secure TPM2-backed pin.'
 +++
 
 # pinpam
