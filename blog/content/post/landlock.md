@@ -6,7 +6,7 @@ type = 'post'
 description = 'Why you should consider using landlock'
 +++
 
-# Landlock: What is landlock?
+### Landlock: What is landlock?
 
 You can think of landlock as an linux API to explicitly declare what resources a program is allowed to access. It's
 similar in a lot of ways to the philosophy of OpenBSD's acclaimed `unveil` and `pledge` syscalls, where programs can
@@ -18,7 +18,7 @@ much easier to grasp.
 
 I'm making this post as an accessible introduction to landlock, and I'm going to try to convince you to give it a try.
 
-# How does it work? What can it do?
+### How does it work? What can it do?
 
 Landlock is a LSM (linux security module) present from linux 5.13. Unlike the MAC LSMs, landlock provides transient
 restrictions on linux resources that begin once the policy is enforced, and cease to exist once the program exits.
@@ -54,7 +54,7 @@ mailing list. It has some limitations, but ongoing work is underway to add more 
 Landlock also has strong backward compatibility, and because it has ABI versioning, its easy for developers to write
 programs that will apply best-effort restrictions on older kernels that don't have the latest ABI features.
 
-# Why should you use it?
+### Why should you use it?
 
 Landlock is especially great if you know your program is only going to need access to certain files. For example, you
 could easily make a policy for nginx to restrict access to only the /var/www/html directory.
@@ -96,7 +96,7 @@ fn restrict_thread() -> Result<(), RulesetError> {
 Other libraries for haskell and go exist, and there are a couple `unveil` clones out there than replicate
 the openbsd syscall's functionality. 
 
-# State of linux sandboxing: Why should you care
+### State of linux sandboxing: Why should you care
 
 With the increased adoption of linux on the desktop, more and more malware is beginning to target
 desktop users. While linux desktop users have enjoyed a relative island of safety, protected in
