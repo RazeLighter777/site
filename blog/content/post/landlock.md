@@ -137,8 +137,9 @@ From the developer side:
 - Easy to integrate
 - Deny-by-default
 - Widely supported since 5.13
+- Backward and forward compatibility mechanisms.
 
-Landlock isn’t perfect, but it fills a major gap: a simple, self-contained unpriviled sandboxing tool suitable for everyday use.
+Landlock isn’t perfect, but it fills a major gap: a simple, self-contained unprivileged sandboxing tool.
 
 ---
 
