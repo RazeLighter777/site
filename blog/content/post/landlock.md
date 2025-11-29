@@ -158,7 +158,8 @@ decent job at this, but imagine if every process in your desktop would need to e
 sensitive files or resources. 
 
 Pair that with an accessible GUI and a system for handling updates and saving permission grants, and we have potential for
-a safer, more secure linux user experience on the desktop. 
+a safer, more secure linux user experience on the desktop.
+
 ---
 ### Ongoing Work in Landlock
 
