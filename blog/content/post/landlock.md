@@ -1,9 +1,9 @@
 +++
 date = '2025-11-29T15:30:30-05:00'
 draft = false
-title = 'Landlock-ing linux'
+title = 'Landlock-ing Linux'
 type = 'post'
-description = 'Why you should consider using landlock'
+description = 'What landlock can add to the state of Linux security'
 +++
 ### Landlock: What Is It?
 
@@ -143,7 +143,23 @@ From the developer side:
 Landlock isn’t perfect, but it fills a major gap: a simple, self-contained unprivileged sandboxing tool.
 
 ---
+### What landlock could bring to the table:
 
+Long-running system daemons that run with elevated privileges could benefit from landlock restrictions. 
+
+Desktop applications dealing with binary formats, like pdf readers, image viewers web browsers, and word processors can be
+restricted to accessing the files they originally opened.
+
+FTP and HTTP servers can be bound to the files they need. Even if nginx is running as root, if an attacker gets a
+full reverse shell, they won't be able to see access files outside the policy.
+
+If the supervisor proposal gets added, we could bring an android-like permissions system to the linux desktop. Flatpak does a
+decent job at this, but imagine if every process in your desktop would need to explicitly ask (at least once) before accessing
+sensitive files or resources. 
+
+Pair that with an accessible GUI and a system for handling updates and saving permission grants, and we have potential for
+a safer, more secure linux user experience on the desktop. 
+---
 ### Ongoing Work in Landlock
 
 Several promising features are under active development:
