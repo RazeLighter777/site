@@ -122,7 +122,7 @@ For example:
 
 Solutions exist to mitigate some of these problems, to varying degrees of success. 
 
-Here's a quick overview of the user facing options you see many apps using:
+Here's a quick overview of the user facing options you may have heard of:
   * docker, podman, and other containerization tools: While these are great for providing isolation of
     server-style applications, they lack the ergonomics to be used for many CLI and desktop applications,
     * Accessing a user's home files requires an explicit volume mount, or mounting the entire home directory.
