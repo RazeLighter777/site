@@ -48,7 +48,9 @@ Unlike SELinux or AppArmor, Landlock policies don’t require administrator invo
 
 Because Landlock requires *no privileges* to use, adding it to most programs is straightforward.
 
-Bindings exist for languages such as C, Rust, Go, and Haskell, and several projects provide user-friendly `unveil`-style wrappers.
+Bindings exist for languages such as Rust, Go, and Haskell, and several projects provide user-friendly `unveil`-style wrappers.
+
+A official c library doesn't exist yet unfortunately, but there's several out there you can try.
 
 Here's a quick rust example:
 ```rust
