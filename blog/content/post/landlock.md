@@ -161,6 +161,7 @@ Pair that with an accessible GUI and a system for handling updates and saving pe
 a safer, more secure linux user experience on the desktop.
 
 ---
+
 ### Ongoing Work in Landlock
 
 Several promising features are under active development:
