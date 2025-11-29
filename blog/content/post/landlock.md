@@ -3,7 +3,7 @@ date = '2025-11-29T15:30:30-05:00'
 draft = false
 title = 'Landlock-ing Linux'
 type = 'post'
-description = 'What landlock can add to the state of Linux security'
+description = 'What Landlock can add to the state of Linux security'
 +++
 ### Landlock: What Is It?
 
