@@ -7,6 +7,8 @@ description = 'What Landlock can add to the state of Linux security'
 +++
 ### Landlock: What Is It?
 
+![Landlock logo](https://landlock.io/_static/landlock-logo-with-shadow.svg)
+
 Landlock is a Linux API that lets applications explicitly declare which resources they are allowed to access. Its philosophy is similar to OpenBSD’s `unveil()` and (less so) `pledge()`: programs can make a contract with the kernel stating, “I only need these files or resources — deny me everything else if I’m compromised.”
 
 It provides a simple, developer-friendly way to add defense-in-depth to applications. Compared to traditional Linux security mechanisms, Landlock is vastly easier to understand and integrate.
