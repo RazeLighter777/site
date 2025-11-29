@@ -34,7 +34,7 @@ For example, you could create a policy that handles all filesystem reads/writes 
 
 The application then calls `landlock_restrict_self()` to enter the restricted domain. From that point on, that thread's child threads and child processes are permanently constrained. Restrictions cannot be revoked.
 
-Policies can be layered (up to 16 layers). A child layer may further *reduce* access, but cannot reintroduce permissions the parent layer removed. For example, a child thread may restrict itself to only reading `/home/user`, but it cannot regain permission to bind to port `2222`.
+Policies can be layered (up to 16 layers). A child layer may further *reduce* access, but cannot reintroduce permissions the parent layer removed. For example, a child thread may add a layer to this policy to restrict itself to only reading `/home/user`, but it cannot regain permission to bind to port `2222` once a layer omits this grant. 
 
 Landlock is unprivileged — any application can sandbox itself. It also uses ABI versioning, allowing programs to apply best-effort sandboxing even on older kernels lacking newer features.
 
