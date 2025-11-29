@@ -51,7 +51,7 @@ Because Landlock requires *no privileges* to use, adding it to most programs is 
 Bindings exist for languages such as C, Rust, Go, and Haskell, and several projects provide user-friendly `unveil`-style wrappers.
 
 Here's a quick rust example:
-```
+```rust
 use landlock::{
     ABI, Access, AccessFs, Ruleset, RulesetAttr, RulesetCreatedAttr, RulesetStatus, RulesetError,
     path_beneath_rules,
