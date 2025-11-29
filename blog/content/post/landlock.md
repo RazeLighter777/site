@@ -1,9 +1,9 @@
 +++
 date = '2025-11-29T15:30:30-05:00'
 draft = false
-title = 'Landlock: an underrated linux sandboxing tool'
+title = 'Landlock: a cool linux sandboxing feature'
 type = 'post'
-description = 'Why landlock may be the future of linux sandboxing'
+description = 'Why you should consider using landlock'
 +++
 
 # Landlock: What is landlock?
