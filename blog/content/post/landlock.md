@@ -143,7 +143,6 @@ From the developer side:
 
 Landlock isn’t perfect, but it fills a major gap: a simple, self-contained unprivileged sandboxing tool.
 
----
 ### What landlock could bring to the table:
 
 Long-running system daemons that run with elevated privileges could benefit from landlock restrictions. 
