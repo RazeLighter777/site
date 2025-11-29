@@ -1,7 +1,7 @@
 +++
 date = '2025-11-29T15:30:30-05:00'
 draft = false
-title = 'Landlock: a cool linux sandboxing feature'
+title = 'Landlock-ing linux'
 type = 'post'
 description = 'Why you should consider using landlock'
 +++
@@ -38,6 +38,7 @@ Policies can be layered (up to 16 layers). A child layer may further *reduce* ac
 
 Landlock is unprivileged — any application can sandbox itself. It also uses ABI versioning, allowing programs to apply best-effort sandboxing even on older kernels lacking newer features.
 
+It's also a stackable LSM, meaning you can combine it with selinux or apparmor in a supplemental layer.
 ---
 
 ### Why Should You Use It?
