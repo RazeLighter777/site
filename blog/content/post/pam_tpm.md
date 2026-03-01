@@ -6,7 +6,7 @@ type = 'post'
 description = 'Using PAM+TPM2 to improve the UX of Linux Auth'
 +++
 
-# Non-stick authentication: using PAM + TPM2 to improve UX of Linux Auth
+## Using PAM + TPM2 to improve UX of Linux Auth
 
 You might be interested in this post if you are curious about Linux authentication, don't know what a TPM actually does, or
 are interested in the security / UX of Linux desktops.
