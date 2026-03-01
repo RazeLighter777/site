@@ -2,6 +2,15 @@ baseURL = 'https://prizrak.me/'
 languageCode = 'en-us'
 title = 'prizrak.me blog'
 [params]
+  math = true
   subtitle = 'Random dev blog thoughts'
   [params.contact]
     email = 'utilityemal77@gmail.com'
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
