@@ -271,14 +271,14 @@ auth            optional        pam_kwallet5.so
 
 Under the hood, kwallet stores the current AUTHTOK (called password here), into a handle retained between PAM executions.
 
-```
+```c
 char *key = strdup(password);
 result = pam_set_data(pamh, kwalletPamDataKey, key, cleanup_free);
 ```
 
 `kwalletPamDataKey` is simply:
 
-```
+```c
 const static char * const kwalletPamDataKey = "kwallet5_key";
 ```
 
