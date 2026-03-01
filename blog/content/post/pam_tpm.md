@@ -1,12 +1,12 @@
 +++
 date = '2026-03-01T14:50:35-05:00'
 draft = false
-title = 'Non-stick authentication'
+title = 'Greasing Linux Auth'
 type = 'post'
-description = 'Using PAM+TPM2 to improve the UX of Linux Auth'
+description = 'Hardware-Backed Auth with PAM + TPM2'
 +++
 
-## Using PAM + TPM2 to improve UX of Linux Auth
+## Hardware-Backed Auth with PAM + TPM2
 
 You might be interested in this post if you are curious about Linux authentication, don't know what a TPM actually does, or
 are interested in the security / UX of Linux desktops.
