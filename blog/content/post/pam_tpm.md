@@ -70,7 +70,7 @@ The entropy difference is clear: PINs of trivial length do not contain sufficien
 
 The problem gets deeper: The hashes for passwords are stored on disks as hashes in the /etc/shadow file, and cracking a four, five, or even six digit PIN is peanuts for a modern processor.
 
-Moreover, on many Linux distributions, the PAM*AUTHTOK, the **plaintext password** passed through PAM, is reused after the pam_authenticate flow in the pam_open_session flow, where it can be used to decrypt keyrings, mount encrypted partitions, and more. This requires making your keyring password \_your actual PIN*. Might as well base64 your keyring at that point.
+Moreover, on many Linux distributions, the PAM*AUTHTOK, the plaintext password passed through PAM, is reused after the pam_authenticate flow in the pam_open_session flow, where it can be used to decrypt keyrings, mount encrypted partitions, and more. This requires making your keyring password *your actual PIN\*. Might as well base64 your keyring at that point.
 
 ### There must be a better way.
 
