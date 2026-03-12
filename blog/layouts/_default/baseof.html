@@ -4,19 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    {{ $css := resources.Get "css/output.css" | css.PostCSS | resources.Minify |
-    resources.Fingerprint }}
+    {{ $css := resources.Get "css/input.css" | css.PostCSS (dict "inlineImports" true) }}
+    {{ if hugo.IsProduction }}
+      {{ $css = $css | resources.Minify | resources.Fingerprint }}
+    {{ end }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+    {{ with .Site.Home.OutputFormats.Get "rss" }}
+    <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}" />
+    {{ end }}
     {{ if .Param "math" }} {{ partialCached "math.html" . }} {{ end }}
   </head>
-  <body class="flex flex-col min-h-screen font-sans">
-    <header class="border-b-2 border-[#ff00ff] py-8 bg-[#1a1a1a]">
+  <body class="matrix-enabled flex flex-col min-h-screen font-sans">
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+    <header class="site-layer site-header border-b-2 border-[#ff00ff] py-8">
       <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
         <div class="flex items-center gap-4">
           <a
             href="/"
-            class="text-2xl font-bold no-underline hover:text-[#00ff9f]"
-            >{{ .Site.Title }}</a
+            class="site-title text-2xl font-bold no-underline hover:text-[#00ff9f]"
+            ><span class="site-title-text">{{ .Site.Title }}</span></a
           >
         </div>
         <nav class="flex gap-6 text-sm uppercase tracking-wide">
@@ -41,14 +47,14 @@
         </div>
       </div>
     </header>
-    <main class="flex-1 w-full py-10 max-w-7xl mx-auto px-1">
+    <main class="site-layer flex-1 w-full py-10 max-w-7xl mx-auto px-1">
       {{ block "main" . }}{{ end }}
     </main>
 
-    <footer class="border-t-2 border-[#ff00ff] py-8 mt-8 bg-[#1a1a1a]">
+    <footer class="site-layer border-t-2 border-[#ff00ff] py-8 mt-8 bg-[#1a1a1a]">
       <div class="max-w-7xl mx-auto px-4 text-sm text-[#999999] text-center">
         <div class="flex flex-col gap-2">
-          {{ with .OutputFormats.Get "rss" }}
+          {{ with .Site.Home.OutputFormats.Get "rss" }}
           <div class="flex justify-center">
             <a
               href="{{ .Permalink }}"
@@ -79,5 +85,6 @@
         </div>
       </div>
     </footer>
+    <script src="/js/matrix.js" defer></script>
   </body>
 </html>

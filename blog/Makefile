@@ -10,12 +10,11 @@ log ?= warn
 help:		## list out commands with descriptions
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
 
-build:		## hugo build & compile css (one-time)
-	@make site css
+build:		## hugo build (includes Tailwind/PostCSS via Hugo pipeline)
+	@make site
 
-run: ##            run Hugo server & watch Tailwind CSS compiler
-	@make -j2 run-site run-css
-	# --jobs=2 parallelizes the commands
+run: ##            run Hugo server with live CSS reload via PostCSS
+	@make run-site
 
 run-caddy: ## [def] run on caddy server
 	@make caddy run

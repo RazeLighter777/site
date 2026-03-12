@@ -1,9 +1,18 @@
 {{ define "main" }}
-  <article class="card">
-    <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
-    <p class="text-[#999999] text-sm mb-8">{{ .Date.Format "Jan 2, 2006" }}</p>
-    <div class="text-[#cccccc] leading-relaxed space-y-6">
-      {{ .Content }}
-    </div>
-  </article>
+  <div class="post-layout">
+    <aside class="toc-column">
+      <div class="toc-box toc-sticky">
+        <h3 class="toc-title">Table of Contents</h3>
+        {{ .TableOfContents }}
+      </div>
+    </aside>
+
+    <article class="card post-content">
+      <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+      <p class="text-[#999999] text-sm mb-8">{{ .Date.Format "Jan 2, 2006" }}</p>
+      <div class="text-[#cccccc] leading-relaxed space-y-6">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
 {{ end }}
