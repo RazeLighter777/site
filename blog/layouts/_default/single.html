@@ -15,14 +15,15 @@
       <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
       <h4 class="text-[#999999] text-sm mb-2">{{ printf "Estimated reading time: %d minutes" .ReadingTime }}</h4>
       <p class="text-[#999999] text-sm mb-8">{{ .Date.Format "Jan 2, 2006" }}</p>
-      <div class="text-[#cccccc] leading-relaxed space-y-6">
-        {{ .Content }}
-      </div>
 
       <details class="toc-mobile toc-box">
         <summary class="toc-title">Table of Contents</summary>
         {{ .TableOfContents }}
       </details>
+
+      <div class="text-[#cccccc] leading-relaxed space-y-6">
+        {{ .Content }}
+      </div>
     </article>
   </div>
 {{ end }}
