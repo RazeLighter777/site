@@ -159,6 +159,16 @@
     min-width: 0;
   }
 
+  .toc-desktop {
+    display: none;
+  }
+
+  .toc-mobile {
+    display: block;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
   .post-content {
     min-width: 0;
   }
@@ -171,6 +181,14 @@
 
     .toc-column {
       grid-column: 1;
+    }
+
+    .toc-desktop {
+      display: block;
+    }
+
+    .toc-mobile {
+      display: none;
     }
 
     .post-content {
@@ -227,6 +245,20 @@
   .toc-box #TableOfContents a {
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
+  }
+
+  .toc-mobile > summary {
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  .toc-mobile > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .toc-mobile[open] > summary {
+    margin-bottom: 0.75rem;
   }
 
   .rss-link {
