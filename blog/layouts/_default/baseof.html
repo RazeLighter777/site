@@ -8,7 +8,9 @@
     {{ if hugo.IsProduction }}
       {{ $css = $css | resources.Minify | resources.Fingerprint }}
     {{ end }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+    {{ with (templates.Defer (dict "key" "global")) }}
+      {{ partial "css.html" . }}
+    {{ end }}
     {{ with .Site.Home.OutputFormats.Get "rss" }}
     <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}" />
     {{ end }}

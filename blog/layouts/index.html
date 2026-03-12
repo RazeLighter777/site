@@ -12,6 +12,9 @@
         {{ if .Params.description }}
         <p class="text-[#cccccc]">{{ .Params.description }}</p>
         {{ end }}
+        {{ with .Params.keywords }}
+        <p class="text-sm text-[#666666] mt-2">Keywords: {{ delimit . ", " }}</p>
+        {{ end }}
       </article>
     {{ else }}
       <p class="text-[#999999]">No posts yet.</p>

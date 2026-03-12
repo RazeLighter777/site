@@ -4,9 +4,10 @@ draft = false
 title = 'Devops-ifying my blog'
 type = 'post'
 description = 'How I deployed hugo on k8s with k8s,tailwind, fluxcd, and git-sync'
+keywords = ['k8s','containers','linux','fluxcd','cicd','iac','devops','dev']
 +++
 
-# Hugo on Kubernetes
+## Hugo on Kubernetes
 
 I wanted to make a self-hosted blog so I could post projects and write about stuff I find interesting. After some research I decided to use [Hugo](https://gohugo.io/) which seemed to check all the boxes for what I wanted:
 
@@ -20,7 +21,7 @@ And no hosting fees! Just the eletric bill, but we won't talk about that.
 
 Is it overkill? Definitely. Does anyone need kubernetes at home? Should you be using it? No and definitely not. But I run about 100 services in my homelab and I like having a consistent way to manage them all.
 
-# Messing around
+## Messing around
 
 I first created a flake.nix on my local machine to build the site with hugo and tailwindcss. It looked something like this:
 
@@ -70,7 +71,7 @@ After consulting my GF for ideas on the color scheme and theme, I settled on a c
 
 After getting the site looking how I wanted, I committed the code and moved to my iaas repo where I manage my kubernetes manifests with fluxcd.
 
-# FluxCD
+## FluxCD
 
 What is fluxcd? From their [website](https://fluxcd.io/): Flux is a set of continuous and progressive delivery solutions for Kubernetes that are open and extensible.
 
@@ -106,13 +107,13 @@ The secret part is just to do some simple `sed 's/{{PLACEHOLDER}}/actual-value/g
 
 Here's where it got tricky.
 
-# Problem: Syncing the built site
+## Problem: Syncing the built site
 
 I needed a way to get the built static site files (the output of `hugo build`) into a place where they could be served by a web server.
 
 Most online guides suggested building a custom docker image with hugo and the site files, then deploying that image to kubernetes with a deployment and service. But I think that's overkill for a simple static site, plus it would require me to set up a docker registry to host the image. bleh.
 
-# bjw-s/app-template
+## bjw-s/app-template
 
 I use bjw-s/app-template for a lot of my k8s apps. It's kind of a weird concept, but it's a helm chart for deploying basically any OCI container in a single helm release. It let's you define the container image, resources, ingress, and other settings in a simple chart.
 
@@ -122,7 +123,7 @@ You can check it out [here](https://github.com/bjw-s-labs/helm-charts).
 
 My solution ended up involving a single pod with three containers: git-sync, hugomods/hugo, and nginx-unprivileged.
 
-# Git-sync
+## Git-sync
 
 Git-sync is a simple container that syncs a git repository to a local volume. It can be configured to run as an init container or a sidecar container.
 
@@ -270,7 +271,7 @@ I even enabled minification of the CSS in my postcss config to reduce the size o
 
 You can check out the full helm release [here](https://raw.githubusercontent.com/RazeLighter777/iaas/refs/heads/main/cluster/apps/blog/app/blog-helmrelease.yaml) if you're interested.
 
-# TL;DR
+## TL;DR
 
 - Use git-sync to sync your hugo site source code from git
 - Use a hugo container to build the site on changes

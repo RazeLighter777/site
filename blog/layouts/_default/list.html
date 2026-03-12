@@ -12,6 +12,9 @@
         <p class="text-[#999999] mb-4">{{ .Params.description }}</p>
         {{ end }}
         <p class="text-sm text-[#666666]">{{ .Date.Format "Jan 2, 2006" }}</p>
+        {{ with .Params.keywords }}
+        <p class="text-sm text-[#666666]">Keywords: {{ delimit . ", " }}</p>
+        {{ end }}
       </a>
     </article>
     {{ end }}

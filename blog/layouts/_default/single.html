@@ -14,8 +14,13 @@
     <article class="card post-content">
       <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
       <h4 class="text-[#999999] text-sm mb-2">{{ printf "Estimated reading time: %d minutes" .ReadingTime }}</h4>
-      <p class="text-[#999999] text-sm mb-8">{{ .Date.Format "Jan 2, 2006" }}</p>
-
+      <p class="text-[#999999] text-sm mb-2">{{ .Date.Format "Jan 2, 2006" }}</p>
+      <h4 class="text-[#999999] text-sm mb-2">
+        Keywords:
+          {{ range .Keywords }}
+          {{ . }}
+        {{ end }}
+      </h4>
       <details class="toc-mobile toc-box">
         <summary class="toc-title">Table of Contents</summary>
         {{ .TableOfContents }}

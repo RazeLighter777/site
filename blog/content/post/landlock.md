@@ -4,6 +4,7 @@ draft = false
 title = 'Landlock-ing Linux'
 type = 'post'
 description = 'What Landlock can add to the state of Linux security'
+keywords = ['landlock','kernel','linux','security','lsm','rust']
 +++
 ### Landlock: What Is It?
 

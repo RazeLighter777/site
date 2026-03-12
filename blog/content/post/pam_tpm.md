@@ -4,6 +4,7 @@ draft = false
 title = 'Greasing Linux Auth'
 type = 'post'
 description = 'Hardware-Backed Auth with PAM + TPM2'
+keywords = ['tpm2','rust','pam','c','pinpam','dev','security']
 +++
 
 ## Hardware-Backed Auth with PAM + TPM2
