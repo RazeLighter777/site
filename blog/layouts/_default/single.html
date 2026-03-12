@@ -1,7 +1,11 @@
 {{ define "main" }}
   <div class="post-layout">
     <aside class="toc-column">
+      {{ with .Prev }}
+            <a class="text-[#999999] text-sm mb-4 pb-4" href="{{ .RelPermalink }}">← Main Page</a>
+      {{ end }}
       <div class="toc-box toc-sticky">
+        
         <h3 class="toc-title">Table of Contents</h3>
         {{ .TableOfContents }}
       </div>
@@ -9,6 +13,7 @@
 
     <article class="card post-content">
       <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+      <h4 class="text-[#999999] text-sm mb-2">{{ printf "Estimated reading time: %d minutes" .ReadingTime }}</h4>
       <p class="text-[#999999] text-sm mb-8">{{ .Date.Format "Jan 2, 2006" }}</p>
       <div class="text-[#cccccc] leading-relaxed space-y-6">
         {{ .Content }}
